@@ -79,7 +79,7 @@ int astar(int* map, int map_width, int map_height, int start_x, int start_y, int
 				case 3: neighbor.x--; break;
 			}
 			// Ignore already explored cells, out-of-the-map cells and unwalkable ones
-			if (is_in_closedset(&neighbor) || neighbor.x < 0 || neighbor.y < 0 || neighbor.x >= map_width || neighbor.y >= map_height || map[neighbor.x * map_height + neighbor.y] == 1)
+			if (is_in_closedset(&neighbor) || neighbor.x < 0 || neighbor.y < 0 || neighbor.x >= map_width || neighbor.y >= map_height || map[neighbor.x * map_height + neighbor.y] > 0)
 				continue;
 			if (!is_in_openset(&neighbor) || current->g + 1 < neighbor.g){
 				neighbor.previous = current;
