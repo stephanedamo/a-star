@@ -25,7 +25,7 @@ for (int i = 0; i<result.pathsize; i++){
 # API
 
 ```C
-// map : Pointer to your map array
+// map : Pointer to a 2D int map array. Change int to other type in astar.h / astar.c if your map don't use integers...
 // map_width, map_height : Map dimensions
 // start_x, int start_y : Coordinates of the starting point
 // goal_x, int goal_y : Coordinates of the ending point
