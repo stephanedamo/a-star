@@ -15,7 +15,7 @@ int map[10][10]; // Create a map
 
 astar_result result; // Create an astar_result struct to hold the calculated paths
 
-astar(&map, 10, 10, 3, 2, 8, 9, &result); // Find a path from start(3,2) to goal(8,9)
+astar(&map, 10, 10, 3, 2, 8, 9, &result); // Find a path from start (x=3, y=2) to goal(x=8, y=9)
 
 for (int i = 0; i<result.pathsize; i++){
   printf("%d, %d\n", result.path[i].x, result.path[i].y); // Display the path
