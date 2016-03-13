@@ -10,16 +10,17 @@
 # Example
 ```C
 // Create a map
-int map[10][10]; 
+int map[4][4] =	{
+	{ 0, 0, 0, 0 },
+	{ 0, 0, 1, 0 },
+	{ 1, 1, 1, 0 },
+	{ 0, 0, 0, 0 } };
 
-/* Fill it with 0 (walkable cells) and >0 values (unwalkable cells) */
-
-// Create an astar_result struct to hold the calculated paths
+// Create an astar_result struct to hold the calculated path
 astar_result result;
 
-// Find a path from start (x=3, y=2) to goal(x=8, y=9)
-if (astar(&map, 10, 10, 3, 2, 8, 9, &result)){ 
-	// If a path was found, display it
+// Find a path from start (x=0, y=0) to goal(x=1, y=3). Display it if the path exists
+if (astar(&map, 10, 10, 0, 0, 1, 3, &result)){
 	for (int i = 0; i<result.pathsize; i++){
 		printf("%d, %d\n", result.path[i].x, result.path[i].y);
 	}
