@@ -19,10 +19,10 @@ astar_result result;
 
 // Find a path from start (x=3, y=2) to goal(x=8, y=9)
 if (astar(&map, 10, 10, 3, 2, 8, 9, &result)){ 
-  for (int i = 0; i<result.pathsize; i++){
-    // Display the path
-    printf("%d, %d\n", result.path[i].x, result.path[i].y);
-  }
+	// If a path was found, display it
+	for (int i = 0; i<result.pathsize; i++){
+		printf("%d, %d\n", result.path[i].x, result.path[i].y);
+	}
 }
 ```
 
