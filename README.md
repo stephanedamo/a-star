@@ -7,7 +7,7 @@
 # Installation
 * Add astar.h / astar.c to your project
 * Include astar.h
-* Change MAX_NODES value in astar.h according to the size of your map. It's the max number of nodes analyzed during pathfinding, the program may crash if it needs to analyze more nodes than MAX_NODES. Setting this value to (map_width * map_height)/2 should be 100% safe for labyrinth-style maps, although in most cases (maps with a lot of free walking space) you can use smaller values and save memory.
+* Change MAX_NODES value in astar.h according to the size of your map. It's the max number of nodes analyzed during pathfinding, the program may crash if it needs to analyze more nodes than MAX_NODES. Setting this value to map_width*map_height is 100% safe for all maps, although in most cases you can use smaller values and save memory.
 * You're ready !
 
 # Usage example
