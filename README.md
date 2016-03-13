@@ -5,7 +5,7 @@
 * 4 directions only (no diagonals), all map cells are considered of equal cost
 
 # Installation
-* Add astar.h / astar.c to your project files
+* Add astar.h / astar.c to your project
 * Include astar.h
 * You're ready !
 
