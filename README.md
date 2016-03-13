@@ -7,6 +7,7 @@
 # Installation
 * Add astar.h / astar.c to your project
 * Include astar.h
+* Change MAX_NODES value in astar.h according to the size of your map. It's the max number of nodes analyzed during pathfinding, the program may crash if it needs to analyze more nodes than MAX_NODES. Setting this value to (map_width * map_height)/2 should be safe in most cases.
 * You're ready !
 
 # Usage example
@@ -39,12 +40,9 @@ if (astar(&map, 10, 10, 0, 0, 1, 3, &result)){
 // goal_x, goal_y : Goal coordinates
 // result : Pointer to the result structure.
 // Function returns 1 if a path was found, 0 otherwise.
-
 int astar(int* map, int map_width, int map_height, int start_x, int start_y, int goal_x, int goal_y, astar_result* result);
 
-
 // The result structure where the calculated path is stored. Read result->path[i] (i from 0 to result->pathsize-1) to get your path.
-
 typedef struct astar_result{
 	node path[MAX_NODES];
 	int pathsize;
