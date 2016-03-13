@@ -1,13 +1,15 @@
-# a-star
-* Simple and fast A* pathfinding algorithm in C for use with 2D grid-maps
+# Overview
+* Simple and fast A* pathfinding algorithm written in C
+* For use with 2D, grid-based maps
 * Very easy to use
 * 4 directions only (no diagonals), all map cells are considered of equal cost
 
 # Installation
 * Add astar.h / astar.c to your project files
 * Include astar.h
+* You're ready !
 
-# Example
+# Usage example
 ```C
 // Create a map
 int map[4][4] =	{
