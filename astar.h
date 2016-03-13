@@ -1,4 +1,4 @@
-/*  Simple and fast A* pathfinding, v1.0
+/*  Simple and fast A* pathfinding, v1.1
 *
 *	This algorithm is 4 directions only (no diagonals) and all map cells are considered of equal cost.
 *
@@ -14,6 +14,7 @@
 // Max analyzed nodes during pathfinding. Increase it for big maps. Will crash if MAX_NODES is reached during calculation.
 #define MAX_NODES 1000
 
+// A node is a cell (x, y) of your map 
 typedef struct node node;
 struct node{
 	int x, y; // Node coordinates
@@ -21,15 +22,17 @@ struct node{
 	node* previous; // Previous node
 };
 
+typedef struct astar_result{
+	node path[MAX_NODES];
+	int pathsize;
+}astar_result;
+
 
 // Calculate the path between start and goal.
-// map : pointer to a 2D int array (you can change int for char or other if your need to). 0 = walkable, 1 = unwalkable. See astar.c line 67 (last condition) to change which values are considered walkable or not.
-// Returns the path length (node count from start to goal including themselves), or zero if the goal is unreachable.
-int astar(int* map, int map_width, int map_height, int start_x, int start_y, int goal_x, int goal_y);
-
-
-// Retrieve your path step by step, by reading node->x and node->y, from index = 0 to pathlength-1.
-node* astar_getnode(int index);
+// map : pointer to a 2D int array (you can change int for short, char or other to suit your needs). 0 = walkable, 1 = unwalkable. See astar.c line 82 (last condition) to change which values are considered walkable or not.
+// result : pointer to a structure that holds the results of the pathfinding. Read result->path[i] (i from 0 to result->pathsize-1) to get your path.
+// Returns 1 if a path was found, 0 if not.
+int astar(int* map, int map_width, int map_height, int start_x, int start_y, int goal_x, int goal_y, astar_result* result);
 
 
 #endif
