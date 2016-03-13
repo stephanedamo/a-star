@@ -9,16 +9,20 @@
 
 # Example
 ```C
-int map[10][10]; // Create a map
+// Create a map
+int map[10][10]; 
 
 /* Fill it with 0 (walkable cells) and >0 values (unwalkable cells) */
 
-astar_result result; // Create an astar_result struct to hold the calculated paths
+// Create an astar_result struct to hold the calculated paths
+astar_result result;
 
-astar(&map, 10, 10, 3, 2, 8, 9, &result); // Find a path from start (x=3, y=2) to goal(x=8, y=9)
-
-for (int i = 0; i<result.pathsize; i++){
-  printf("%d, %d\n", result.path[i].x, result.path[i].y); // Display the path
+// Find a path from start (x=3, y=2) to goal(x=8, y=9)
+if (astar(&map, 10, 10, 3, 2, 8, 9, &result)){ 
+  for (int i = 0; i<result.pathsize; i++){
+    // Display the path
+    printf("%d, %d\n", result.path[i].x, result.path[i].y);
+  }
 }
 ```
 
@@ -30,6 +34,7 @@ for (int i = 0; i<result.pathsize; i++){
 // start_x, start_y : Coordinates of the starting point
 // goal_x, goal_y : Coordinates of the ending point
 // result : Pointer to the result structure. Read result->path[i] (i from 0 to result->pathsize-1) to get your path.
+// Function returns 1 if a path was found, 0 otherwise.
 
 int astar(int* map, int map_width, int map_height, int start_x, int start_y, int goal_x, int goal_y, astar_result* result);
 ```
