@@ -32,7 +32,7 @@ if (astar(&map, 10, 10, 0, 0, 1, 3, &result)){
 # API
 
 ```C
-// map : Pointer to a 2D int map array. Change int to other type in astar.h / astar.c if your map don't use integers.
+// map : Pointer to a 2D int map array. Change int to other type in astar.h / astar.c if your map does not use integers.
 // map_width, map_height : Map dimensions
 // start_x, start_y : Coordinates of the starting point
 // goal_x, goal_y : Coordinates of the ending point
